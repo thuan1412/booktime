@@ -4,11 +4,11 @@ from main import views
 
 urlpatterns = [
     path(
-        "about-us/", 
+        "about-us/",
         TemplateView.as_view(template_name="about_us.html"),
         name="about_us",),
     path(
-        "", 
+        "",
         TemplateView.as_view(template_name='home.html'),
         name="home",),
     path(

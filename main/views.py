@@ -1,6 +1,7 @@
 from django.views.generic.edit import FormView
 from main import forms
 
+
 class ContactUsView(FormView):
     template_name = "contact_form.html"
     form_class = forms.ContactForm

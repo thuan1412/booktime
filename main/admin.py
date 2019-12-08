@@ -31,8 +31,9 @@ class ProductImageAdmin(admin.ModelAdmin):
                 '<img src="%s"/>' % obj.thumbnail.url
             )
         return "-"
-    
+
     thumbnail_tag.short_description = "Thumbnail"
+
     def product_name(self, obj):
         return obj.product.name
 
