@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from main import forms
 
+
 class TestPage(TestCase):
     def test_home_page_works(self):
         response = self.client.get(reverse("home"))

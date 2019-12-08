@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.test import TestCase
 from main import models
 
+
 class TestModel(TestCase):
     def test_active_manager_work(self):
         models.Product.objects.create(

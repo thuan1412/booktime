@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models import Manager
 
+
 class ActiveManager(models.Manager):
     def active(self):
         return self.filter(active=True)
@@ -13,13 +14,15 @@ class Product(models.Model):
     slug = models.SlugField(max_length=48)
     active = models.BooleanField(default=True)
     in_stock = models.BooleanField(default=True)
-    date_updated = models
+    date_updated = models.DateTimeField(auto_now=True)
     objects = ActiveManager()
+
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='product-images')
     thumbnail = models.ImageField("product-thumbnails", null=True)
+
 
 class ProductTag(models.Model):
     products = models.ManyToManyField(Product, blank=True)
